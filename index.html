@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .xi-loading{
+            width: 100%;
+            height: 30px;
+            margin: 100px auto;
+            font-size: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .xi-loading span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            /*box-shadow: 6px 6px 6px 2px #ffdfdb;*/
+        }
+        .xi-loading span:nth-child(1){
+            background-image: linear-gradient(-45deg,#ff8a08,#ff9200);
+            transform: translate3d(0,0,0);
+            animation: slideToRight 2s forwards linear;
+        }
+        .xi-loading span:nth-child(2){
+            background-image: linear-gradient(-45deg,#ff6928,#ff7918);
+            animation: rotateDot .5s forwards;
+        }
+        .xi-loading span:nth-child(3){
+            background-image: linear-gradient(-45deg,#ff4149,#ff5538);
+            animation: rotateDot .5s .5s forwards;
+        }
+        .xi-loading span:nth-child(4){
+            background-image: linear-gradient(-45deg,#ff1c69,#ff2c5d);
+            animation: rotateDot .5s 1s forwards;
+        }
+        .xi-loading span:last-child{
+            background-image: linear-gradient(-45deg,#ff0482,#ff0c79);
+            animation: rotateDot .5s 1.5s forwards;
+            margin-right: 0;
+        }
+        @keyframes rotateDot {
+            0%{
+                transform: rotate(0deg);
+                transform-origin: -16% center;
+            }
+            100%{
+                transform: rotate(-180deg);
+                transform-origin: -16% center;
+            }
+        }
+        @keyframes slideToRight {
+            0%{
+                transform: translate3d(0px,0,0);
+            }
+            100%{
+                transform: translate3d(160px,0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="xi-loading">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>
